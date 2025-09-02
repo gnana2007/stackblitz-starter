@@ -18,7 +18,7 @@ enrollmentDate:{
 },
  courses:{
 
-  type: Array,
+  type: mongoose.Schema.Types.ObjectId
   ref: 'Course'
 }
 })
@@ -52,3 +52,7 @@ instructor:{
   required: true
 }
 });
+
+const student = mongoose.Model("student", studentSchema);
+const course = mongoose.Model("course" , courseSchema);
+module.exports(student , course);
